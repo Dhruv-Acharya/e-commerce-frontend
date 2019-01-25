@@ -10,7 +10,25 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/customer/**':{
+        target:'https://customer-lelo.herokuapp.com',
+        changeOrigin:true
+      },
+      '/product/**' :{
+        target: 'https://product-lelo.herokuapp.com',
+        changeOrigin: true
+      },
+      // '/cart/**' : {
+      //   target: 'https://order-lelo.herokuapp.com',
+      //   changeOrigin: true
+      // },
+      // '/order/**':{
+      //   target: 'https://order-lelo.herokuapp.com',
+      //   changeOrigin: true
+      // }
+
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
